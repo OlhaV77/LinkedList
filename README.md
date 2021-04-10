@@ -1,4 +1,4 @@
-# LinkedList
+# Node
 
 Implement your own simple linkedlist.
 

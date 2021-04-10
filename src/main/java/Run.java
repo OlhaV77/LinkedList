@@ -1,19 +1,19 @@
-import java.util.Arrays;
-
 public class Run {
     public static void main(String[] args) {
-        LinkedLists list = new LinkedLists();
+        LinkedList list = new LinkedList();
             list.getPrintAll();
+            list.add(1);
+            list.add(2);
             list.add(3);
-            list.add(5);
-            list.add(6);
             list.getPrintAll();
             list.addWithIndexPosition(4, 1);
             list.getPrintAll();
-            list.addWithIndexPosition(4, 3);
+            list.addWithIndexPosition(5, 2);
             list.getPrintAll();
-            list.addWithIndexPosition(8, 0);
+            list.addWithIndexPosition(6, 0);
             list.getPrintAll();
+            list.findByIndex(2);
+
 
         }
     }
