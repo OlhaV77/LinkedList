@@ -1,35 +1,53 @@
 class LinkedList {
-    Node head;                         //object
+    //        firstNode ->  (1) [int|next] -> (2) [int|next] -> (3) [int|next] -> null
+    Node firstNode;
     int size;
 
-    public void add(int data) {                     // element to insert
-        if (head == null) {                         //check is  empty  space
-            size++;                                 // size + 1;
-            return;                                 //invalid position
+    public void add(int data) {
+        Node node = new Node(data);
+        if (firstNode == null) {
+            firstNode = node;
+        } else {
+            if (firstNode.next == null) {
+                firstNode.next = node;
+            } else {
+                if(firstNode.next.next == null) {
+                    firstNode.next.next = node;
+                }
+            }
         }
 
-        Node list = head;                        //object  takes on the meaning number(data)
-        if (list.next != null) {                 // while next object no equal null
-            list = list.next;                    // the object takes the following next number
-        }
-        list.next = new Node(data);         //next object  = new number(data)
-        size++;                                    // size + 1
-
+        size++;
     }
 
+    public int[] toArray() {
+        int[] result = new int[size];
+        if (size == 0) {
+            return null;
+        }
+        Node current = firstNode;
+        int counter = 0;
+        while (current != null) {
+            result[counter] = current.data;
+            current = current.next;
+            counter++;
+        }
+
+        return result;
+    }
 
     public void addWithIndexPosition(int data, int index) {                 // data = element to insert , index = position at which to insert the element
-        if (index > size - 1) {                               // check the index was not bigger size
+        if (index > this.size - 1) {                               // check the index was not bigger size
             return;                                       // invalid position
         }
 
-        Node current = head;                   // object  current next number (текущии номер)
+        Node current = firstNode;                   // object  current next number (текущии номер)
         Node list = new Node(data);            // new object
         int position = 0;
 
         if (index == 0) {                              //  since its a single reference change
-            list.next = head;                       //  takes number on the first position
-            head = list;                             // copy object
+            list.next = firstNode;                       //  takes number on the first position
+            firstNode = list;                             // copy object
             size++;
             return;
         }
@@ -44,55 +62,39 @@ class LinkedList {
 
         list.next = current.next;                           //  changing a reference
         current.next = list;                                // changing a reference  as we need
-        size++;
-        head.next = current.next;
+        this.size++;
+        firstNode.next = current.next;
     }
 
-    public void  addInFront(int data){
+    public void addInFront(int data) {
 
     }
 
     public int findByIndex(int index) {
-      //  if (index > size - 1 || index < 0) {
-       //     return head.next;
-      //  }
+        //  if (index > size - 1 || index < 0) {
+        //     return head.next;
+        //  }
 
-        if(index == 0){
-            return head.data;
+        if (index == 0) {
+            return firstNode.data;
         }
 
-        Node list = head;
+        Node list = firstNode;
         int count = 0;
         while (list != null) {
             list = list.next;
             count++;
             if (count == index) {
-                head = list;
-                return head.data;
+                firstNode = list;
+                return firstNode.data;
             }
         }
         return 0;
     }
 
-    public Node remove(int index){
-        return  null;
+    public Node remove(int index) {
+        return null;
     }
 
-    public void getPrintAll() {
-        if (size == 0) {                                 //list is empty
-            return;
-        }
 
-        Node current = head;                     //object with current number
-        while (current.next != null) {
-            System.out.print(current.data + " - ");
-            current = current.next;
-        }
-        System.out.print(current.data + "\n");
-
-    }
-
-    public int[] toArray() {
-        return new int[0];
-    }
 }

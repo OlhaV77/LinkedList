@@ -17,6 +17,19 @@ public class LinkedListTest {
     }
 
     @Test
+    public void toArray_whenTwoEntry_returnsArrayOfTwo() {
+        LinkedList subject = new LinkedList();
+        subject.add(123);
+        subject.add(234);
+
+        int[] actual = subject.toArray();
+
+        assertThat(actual).hasSize(2);
+        assertThat(actual[0]).isEqualTo(123);
+        assertThat(actual[1]).isEqualTo(234);
+    }
+
+    @Test
     public void toArray_when3Entries_returnsArrayOf3() {
         LinkedList subject = new LinkedList();
         subject.add(123);
@@ -30,6 +43,7 @@ public class LinkedListTest {
         assertThat(actual[1]).isEqualTo(321);
         assertThat(actual[2]).isEqualTo(456);
     }
+    /*
 
     @Test
     public void findByIndex_when3Entries_returnsCorrectValue() {
@@ -57,5 +71,9 @@ public class LinkedListTest {
         assertThat(actual[1]).isEqualTo(321);
         assertThat(actual[2]).isEqualTo(123);
     }
+
+
+ */
+
 
 }
