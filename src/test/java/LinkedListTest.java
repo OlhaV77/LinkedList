@@ -43,7 +43,7 @@ public class LinkedListTest {
         assertThat(actual[1]).isEqualTo(321);
         assertThat(actual[2]).isEqualTo(456);
     }
-    /*
+   /*
 
     @Test
     public void findByIndex_when3Entries_returnsCorrectValue() {
@@ -56,6 +56,8 @@ public class LinkedListTest {
 
         assertThat(actual).isEqualTo(321);
     }
+
+
 
     @Test
     public void toArray_when3EntriesAddedInFront_returnsArrayOf3() {
@@ -73,7 +75,9 @@ public class LinkedListTest {
     }
 
 
- */
+
+    */
+
 
 
 }

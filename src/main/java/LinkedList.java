@@ -5,18 +5,16 @@ class LinkedList {
 
     public void add(int data) {
         Node node = new Node(data);
+
         if (firstNode == null) {
             firstNode = node;
         } else {
-            if (firstNode.next == null) {
-                firstNode.next = node;
-            } else {
-                if(firstNode.next.next == null) {
-                    firstNode.next.next = node;
-                }
+           Node last = firstNode;
+            while (last.next != null) {
+                last = last.next;
             }
+            last.next = node;
         }
-
         size++;
     }
 
@@ -67,7 +65,18 @@ class LinkedList {
     }
 
     public void addInFront(int data) {
-
+        Node node = new Node(data);
+        if (firstNode == null) {
+            firstNode = node;
+            return;
+        }
+        Node last = firstNode;
+        while (firstNode.next != null) {
+            last = last.next;
+            last.next = node;
+            return;
+        }
+        size++;
     }
 
     public int findByIndex(int index) {
