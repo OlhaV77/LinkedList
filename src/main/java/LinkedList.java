@@ -80,14 +80,9 @@ class LinkedList {
     }
 
     public int findByIndex(int index) {
-        //  if (index > size - 1 || index < 0) {
-        //     return head.next;
-        //  }
-
         if (index == 0) {
             return firstNode.data;
         }
-
         Node list = firstNode;
         int count = 0;
         while (list != null) {
