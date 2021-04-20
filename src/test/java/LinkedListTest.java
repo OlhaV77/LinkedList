@@ -10,7 +10,7 @@ public class LinkedListTest {
         LinkedList subject = new LinkedList();
         subject.add(123);
 
-        int[] actual = subject.toArray();
+        int[] actual = subject.getAll();
 
         assertThat(actual).hasSize(1);
         assertThat(actual[0]).isEqualTo(123);
@@ -22,7 +22,7 @@ public class LinkedListTest {
         subject.add(123);
         subject.add(234);
 
-        int[] actual = subject.toArray();
+        int[] actual = subject.getAll();
 
         assertThat(actual).hasSize(2);
         assertThat(actual[0]).isEqualTo(123);
@@ -36,14 +36,13 @@ public class LinkedListTest {
         subject.add(321);
         subject.add(456);
 
-        int[] actual = subject.toArray();
+        int[] actual = subject.getAll();
 
         assertThat(actual).hasSize(3);
         assertThat(actual[0]).isEqualTo(123);
         assertThat(actual[1]).isEqualTo(321);
         assertThat(actual[2]).isEqualTo(456);
     }
-
 
     @Test
     public void findByIndex_when3Entries_returnsCorrectValue() {
@@ -57,8 +56,6 @@ public class LinkedListTest {
         assertThat(actual).isEqualTo(321);
     }
 
-
-
     @Test
     public void toArray_when3EntriesAddedInFront_returnsArrayOf3() {
         LinkedList subject = new LinkedList();
@@ -66,11 +63,29 @@ public class LinkedListTest {
         subject.addInFront(321);
         subject.addInFront(456);
 
-        int[] actual = subject.toArray();
+        int[] actual = subject.getAll();
 
         assertThat(actual).hasSize(3);
         assertThat(actual[0]).isEqualTo(456);
         assertThat(actual[1]).isEqualTo(321);
         assertThat(actual[2]).isEqualTo(123);
     }
+
+    @Test
+    public void toArray_when3Entries_returnsCorrectValue() {
+        LinkedList subject = new LinkedList();
+        subject.add(123);
+        subject.add(321);
+        subject.add(456);
+
+        subject.findByIndex(2);
+
+        int[] actual = subject.getAll();
+
+        assertThat(actual).hasSize(3);
+        assertThat(actual[0]).isEqualTo(123);
+        assertThat(actual[1]).isEqualTo(321);
+        assertThat(actual[2]).isEqualTo(456);
+    }
+
 }
