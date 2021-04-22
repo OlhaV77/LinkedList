@@ -140,4 +140,5 @@ public class IntegerArrayTest {
         assertThat(actual[0]).isEqualTo(10);
         assertThat(actual[1]).isEqualTo(1);
     }
+
 }
