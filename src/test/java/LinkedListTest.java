@@ -51,7 +51,7 @@ public class LinkedListTest {
         subject.add(321);
         subject.add(456);
 
-        int actual = subject.findByIndex(1);
+        int actual = subject.get(1);
 
         assertThat(actual).isEqualTo(321);
     }
@@ -78,7 +78,7 @@ public class LinkedListTest {
         subject.add(321);
         subject.add(456);
 
-        subject.findByIndex(2);
+        subject.get(2);
 
         int[] actual = subject.getAll();
 

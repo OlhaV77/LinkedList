@@ -1,9 +1,27 @@
 import org.junit.Test;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Vector;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 public class IntegerArrayTest {
+
+    @Test
+    public void removeMe() {
+//        List list = new LinkedList();
+        List list = new Vector();
+//        List list = new ArrayList();
+
+        list.add("asd");
+        list.add(0, new BigDecimal("123.21"));
+        list.remove(1);
+    }
+
     @Test
     public void add_whenSimpleInteger_works() {
         IntegerArray subject = new IntegerArray();

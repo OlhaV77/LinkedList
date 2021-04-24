@@ -1,4 +1,4 @@
-public class IntegerArray {
+public class IntegerArray  implements OlgaList{
     int[] storage = new int[0];
     int size = 0;
 
@@ -24,6 +24,9 @@ public class IntegerArray {
         size++;
 
     }
+
+    @Override
+
 
     public int[] getAll(){
         return storage;

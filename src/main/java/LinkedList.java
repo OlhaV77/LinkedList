@@ -1,7 +1,7 @@
-class LinkedList {
-    //        firstNode ->  (1) [int|next] -> (2) [int|next] -> (3) [int|next] -> null
+class LinkedList implements  OlgaList{
     Node firstNode;
     int size;
+
 
     public void add(int data) {
         Node node = new Node(data);
@@ -17,6 +17,9 @@ class LinkedList {
         }
         size++;
     }
+
+    @Override
+
 
     public int[] getAll() {
         int[] result = new int[size];
@@ -46,7 +49,7 @@ class LinkedList {
         size++;
     }
 
-    public int findByIndex(int index) {
+    public int get(int index) {
         if (index == 0) {
             return firstNode.data;
         }
